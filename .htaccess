@@ -1,0 +1,26 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+RewriteEngine On
+
+# Preserve Authorization header for PHP/JWT authentication.
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Never rewrite API or uploaded files.
+RewriteRule ^api/ - [L]
+RewriteRule ^uploads/ - [L]
+RewriteRule ^vendor/ - [L]
+
+# Keep existing files/directories untouched.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Frontend SPA fallback.
+RewriteRule ^ index.html [L]

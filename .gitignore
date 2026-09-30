@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+/vendor/
+/uploads/profile/*
+!/uploads/profile/.gitkeep
+!/uploads/profile/.htaccess

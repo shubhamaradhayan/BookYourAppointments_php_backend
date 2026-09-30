@@ -1,0 +1,10 @@
+{
+  "name": "bookflow/backend",
+  "description": "Production-oriented Core PHP backend for BookFlow appointment SaaS.",
+  "type": "project",
+  "require": {
+    "firebase/php-jwt": "^7.1",
+    "google/apiclient": "^2.19",
+    "phpmailer/phpmailer": "^7.0"
+  }
+}
