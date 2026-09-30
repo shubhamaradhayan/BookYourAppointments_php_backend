@@ -1,4 +1,4 @@
-# BookFlow Backend — Core PHP + MySQL + JWT + Google Calendar
+# BookYourAppointments Backend — Core PHP + MySQL + JWT + Google Calendar
 
 Production-oriented backend for the BookFlow appointment SaaS.
 
@@ -42,7 +42,8 @@ MySQL
 Linux XAMPP example:
 
 ```bash
-sudo cp -r bookflow_backend_jwt_google_calendar /opt/lampp/htdocs/bookflow
+ sudo cp -r BookYourAppointments_php_backend
+ /opt/lampp/htdocs/bookflow
 ```
 
 Or use your normal XAMPP `htdocs` directory.
@@ -91,7 +92,7 @@ Never commit `.env`.
 
 ## 4. Database
 
-If the BookFlow database already exists, do not blindly import the entire
+If the BookYourAppointments database already exists, do not blindly import the entire
 schema into production.
 
 The new JWT/Google Calendar version requires these tables:
